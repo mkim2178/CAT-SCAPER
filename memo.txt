@@ -1,0 +1,9 @@
+Maze Escaper
+
+Create a random maze and escape it.
+
+1. Maze should be random every time start the game
+2. starting points should be random that are far away from the ending point.
+3. ending point should be one of the boarding lines of the game screen
+4. several enemies randomly hang around the maze (player should avoid this)
+5. shoe items are randomly exists in the maze (if player wear this, speed up in short period)
