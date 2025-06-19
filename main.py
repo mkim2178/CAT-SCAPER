@@ -1,11 +1,9 @@
 import pygame
+from player import Player
 
 SCREEN_WIDTH = 1280
 SCREEN_HEIGHT = 720
-PLAYER_SIZE = 20
-PLAYER_SPEED = 10
-PLAYER_COLOR = (30, 30, 30)
-BG_COLOR = (245, 245, 245)
+BG_COLOR = (166, 224, 206)
 
 def main():
     pygame.init()
@@ -13,37 +11,25 @@ def main():
     clock = pygame.time.Clock()
     running = True
 
-    player = pygame.Rect(
-        (SCREEN_WIDTH - PLAYER_SIZE) // 2,
-        (SCREEN_HEIGHT - PLAYER_SIZE) // 2,
-        PLAYER_SIZE,
-        PLAYER_SIZE
-    )
+    player = Player(SCREEN_WIDTH, SCREEN_HEIGHT)
+    all_sprites = pygame.sprite.Group()
+    all_sprites.add(player)
 
     while running:
-
 
         for event in pygame.event.get():
             if event.type == pygame.QUIT or (event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE):
                 running = False
-            # if event.type == pygame.KEYDOWN and event.key == pygame.K_d:
-            #     PLAYER_COLOR = (220, 220, 220)
-            #     BG_COLOR = (30, 30, 30)
-
-                
         
-        keys = pygame.key.get_pressed()
-        if keys[pygame.K_RIGHT]:
-            player.move_ip(PLAYER_SPEED, 0)
-        if keys[pygame.K_LEFT]:
-            player.move_ip(-PLAYER_SPEED, 0)
-        if keys[pygame.K_UP]:
-            player.move_ip(0, -PLAYER_SPEED)
-        if keys[pygame.K_DOWN]:
-            player.move_ip(0, PLAYER_SPEED)
+        # update every sprite
+        all_sprites.update()
 
+        # draw the screen
         screen.fill(BG_COLOR)
-        pygame.draw.rect(screen, PLAYER_COLOR, player)
+
+        # draw every sprite
+        all_sprites.draw(screen)
+
         pygame.display.flip()
         clock.tick(60)
 
