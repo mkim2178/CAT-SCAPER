@@ -19,3 +19,6 @@ class Text:
 
     def set_center(self, center_pos):
         self.rect = self.surface.get_rect(center=center_pos)
+    
+    def get_position(self):
+        print(self.rect.left, self.rect.top, self.rect.right, self.rect.bottom)
