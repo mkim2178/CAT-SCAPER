@@ -2,11 +2,11 @@ import pygame
 
 class Button:
 
-    def __init__(self, center_pos, width, height, default_color, text=None, hover_color=None):
+    def __init__(self, center_pos, width, height, default_color, hover_color, text):
         self.rect = pygame.Rect(0, 0, width, height)
         self.rect.center = center_pos
         self.default_color = default_color
-        self.hover_color = hover_color or default_color
+        self.hover_color = hover_color
         self.current_color = default_color
         self.text = text
 
@@ -19,13 +19,11 @@ class Button:
     def is_clicked(self, mouse_pos):
         return self.rect.collidepoint(mouse_pos)
     
+    def update_color(self):
+        self.current_color = self.hover_color if self.is_hovered() else self.default_color
+    
     def draw(self, screen):
 
-        if self.is_hovered():
-            self.current_color = self.hover_color
-        else:
-            self.current_color = self.default_color
-
-        pygame.draw.rect(screen, self.current_color, self.rect)
+        pygame.draw.rect(screen, self.current_color, self.rect, border_radius=10)
         if self.text:
             self.text.draw(screen)
