@@ -48,5 +48,9 @@ class Player(pygame.sprite.Sprite):
             else:
                 self.rect.y = self.screen_height - self.rect.height
 
+    
+    def is_collide(self, enemy):
+        return self.rect.colliderect(enemy)
+
     def reset(self):
         self.rect.center = (320, 350)
