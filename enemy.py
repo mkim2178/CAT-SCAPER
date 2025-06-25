@@ -11,15 +11,17 @@ class Enemy(pygame.sprite.Sprite):
         self.image = pygame.image.load("images/cat4x.png").convert_alpha()
 
         # get the rectangle of the image
-        self.rect = self.image.get_rect(center=(960, 350))
+        # random starting point
+        random_x = random.randint(960 + self.image.get_width() // 2, 1280 - self.image.get_width() // 2)
+        random_y = random.randint(0 + self.image.get_height() // 2, 720 - self.image.get_height() // 2)
+        self.rect = self.image.get_rect(center=(random_x, random_y))
 
         # set the boundaries that player can move
         self.screen_width = screen_width
         self.screen_height = screen_height
 
         self.speed = 5
-        self.max_speed = 15
-
+        self.max_speed = 20
         
         self.direction = self.starting_direction()
 
@@ -61,7 +63,9 @@ class Enemy(pygame.sprite.Sprite):
 
     
     def reset(self):
-        self.rect = self.image.get_rect(center=(960, 350))
+        random_x = random.randint(960 + self.image.get_width() // 2, 1280 - self.image.get_width() // 2)
+        random_y = random.randint(0 + self.image.get_height() // 2, 720 - self.image.get_height() // 2)
+        self.rect = self.image.get_rect(center=(random_x, random_y))
         self.speed = 5
         self.direction = self.starting_direction()
         self.dx = math.cos(self.direction)
