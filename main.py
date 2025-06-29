@@ -16,6 +16,22 @@ BUTTON_DEFAULT_COLOR = (59, 89, 152)
 BUTTON_HOVER_COLOR = (84, 127, 206)
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 def main():
     pygame.init()
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
@@ -134,8 +150,8 @@ def main():
             if event.type == pygame.QUIT:
                 running = False
             if event.type == pygame.KEYDOWN:
-                if event.key == pygame.K_ESCAPE:
-                    running = False
+                if event.key == pygame.K_r:
+                    print("r key pressed")
 
             if event.type == pygame.MOUSEBUTTONDOWN:
                 if event.button == 1:
@@ -211,6 +227,7 @@ def main():
         
         elif game_status == "game_over":
             restarting_menu.fill()
+        
 
 
 
