@@ -6,7 +6,7 @@ class Player(pygame.sprite.Sprite):
         super().__init__()
 
         # load the image to set the player's appearance -> this will be used when player's image has been selected
-        self.image = pygame.image.load("images/mouse4x.png").convert_alpha()
+        self.image = pygame.image.load("assets/sprites/mouse4x.png").convert_alpha()
 
         # get the rectangle of the image
         self.rect = self.image.get_rect(center=(320, 350))

@@ -1,13 +1,13 @@
 import pygame
 
-class Screen:
+class Menu:
 
     def __init__(self, screen, screen_color, texts=None, buttons=None):
 
         self.screen = screen
         self.screen_color = screen_color
-        self.texts = texts if texts else []
-        self.buttons = buttons if buttons else []
+        self.texts = texts or []
+        self.buttons = buttons or []
     
 
     def fill(self):

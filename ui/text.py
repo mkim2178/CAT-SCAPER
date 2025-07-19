@@ -12,7 +12,7 @@ class Text:
     def draw(self, target_surface):
         target_surface.blit(self.surface, self.rect)
 
-    def update(self, new_text):
+    def update_text(self, new_text):
         self.text = new_text
         self.surface = self.font.render(new_text, True, self.font_color)
         self.rect = self.surface.get_rect(center=self.rect.center)

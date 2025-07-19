@@ -8,7 +8,7 @@ class Enemy(pygame.sprite.Sprite):
         super().__init__()
 
         # load the image to set the player's appearance -> this will be used when player's image has been selected
-        self.image = pygame.image.load("images/cat4x.png").convert_alpha()
+        self.image = pygame.image.load("assets/sprites/cat4x.png").convert_alpha()
 
         # get the rectangle of the image
         # random starting point
@@ -21,7 +21,7 @@ class Enemy(pygame.sprite.Sprite):
         self.screen_height = screen_height
 
         self.speed = 5
-        self.max_speed = 20
+        self.max_speed = 25
         
         self.direction = self.starting_direction()
 

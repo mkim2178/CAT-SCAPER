@@ -1,0 +1,12 @@
+BACKGROUND_COLOR = (31, 41, 55)
+BACKGROUND_MUSIC = "assets/music/background_music.mp3"
+CLICK_SOUND = "assets/sfx/click_sound.wav"
+COLLIDE_SOUND = "assets/sfx/collide_sound.wav"
+BUTTON_DEFAULT_COLOR = (59, 89, 152)
+BUTTON_HOVER_COLOR = (84, 127, 206)
+FONT_TYPE = "fonts/PressStart2P-Regular.ttf"
+GAME_ICON = "assets/sprites/mouse4x.png"
+GAME_TITLE = "CAT-SCAPER"
+SCREEN_WIDTH = 1280
+SCREEN_HEIGHT = 720
+TEXT_COLOR = (230, 230, 230)

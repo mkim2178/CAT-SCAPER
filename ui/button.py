@@ -22,6 +22,9 @@ class Button:
     def update_color(self):
         self.current_color = self.hover_color if self.is_hovered() else self.default_color
     
+    def update_text(self, new_text):
+        self.text.update_text(new_text)
+
     def draw(self, screen):
 
         pygame.draw.rect(screen, self.current_color, self.rect, border_radius=10)
