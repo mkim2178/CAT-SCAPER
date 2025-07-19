@@ -1,7 +1,7 @@
 # CAT-SCAPER
 
 ## Requirements
-- Python 3.10+
+- Python 3.10 - 3.12
 - Pygame library
 
 ## Setup Instructions
